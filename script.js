@@ -58,105 +58,54 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(el);
   });
 
-  /* ── 5. BEFORE & AFTER TABS ──
-     Each case is a full composite image (before+after already combined).
-     Tabs simply swap which image is displayed.
+  /* ── 5. BEFORE & AFTER CARDS ──
+     Cards are now displayed in a static grid layout on desktop.
+     No tab switching logic needed.
   ── */
-  var baCases = [
-    {
-      label: "Jaw Contouring",
-      cat: "Dermal Fillers",
-      src: "ba-1.jpg",
-      desc: "Jawline definition and chin projection using dermal fillers. Covent Clinic Dubai.",
-    },
-    {
-      label: "Endo Lift",
-      cat: "Endo Lift",
-      src: "ba-2.jpg",
-      desc: "Non-surgical Endo Lift treatment for jawline tightening and contouring. Covent Clinic Dubai.",
-    },
-    {
-      label: "Skin Tightening",
-      cat: "Skin Tightening",
-      src: "ba-3.jpg",
-      desc: "Advanced skin tightening treatment for accumulated fat and sagging skin. Covent Clinic Dubai.",
-    },
-  ];
-
-  var baTabs = document.querySelectorAll(".ba-tab");
-  var baImg = document.getElementById("ba-main-img");
-  var baImgAlt = document.getElementById("ba-main-alt");
-  var baActive = 0;
-
-  function setBACase(idx) {
-    if (idx === baActive) return;
-    baActive = idx;
-
-    /* Fade out */
-    baImg.style.opacity = "0";
-
-    setTimeout(function () {
-      baImg.src = baCases[idx].src;
-      baImg.alt = baCases[idx].desc;
-      if (baImgAlt) baImgAlt.textContent = baCases[idx].desc;
-      /* Fade in */
-      baImg.style.opacity = "1";
-    }, 300);
-
-    baTabs.forEach(function (t, i) {
-      t.classList.toggle("active", i === idx);
-    });
-  }
-
-  baTabs.forEach(function (tab, idx) {
-    tab.addEventListener("click", function () {
-      setBACase(idx);
-    });
-  });
 
   /* ── 6. TESTIMONIALS PAGINATOR ── */
   var testimonials = [
     {
-      name: "Nour Al-Hassan",
-      role: "Marketing Executive, DIFC",
-      text: "The results were so natural people simply said I looked refreshed. The team's attention to detail is unmatched in Dubai.",
+      name: "Maria F",
+      role: "Patient",
+      text: "Amazing, great Doctor Issa. Very professional. Had again endolift session of another area",
       rating: 5,
-      treatment: "Botox & Fillers",
+      treatment: "Endo Lift",
     },
     {
-      name: "Sophia Lindqvist",
-      role: "Fashion Designer, Downtown",
-      text: "I left absolutely amazed. The HydraFacial and skin boosters transformed my skin in a single session. Truly world-class.",
+      name: "Reena K",
+      role: "Patient",
+      text: "She is phenomenal. Very gentle with her procedures.",
       rating: 5,
-      treatment: "HydraFacial",
+      treatment: "General",
     },
     {
-      name: "Omar Khalid",
-      role: "CEO, Business Bay",
-      text: "The team made the entire experience discreet, professional, and genuinely effective. My skin has never looked better.",
+      name: "Maria F",
+      role: "Patient",
+      text: "Did endolift today for my arms. Need to say the doctor is great. Did it very professionally and painless. Can't wait to make more areas",
       rating: 5,
-      treatment: "Skin Boosters",
+      treatment: "Endo Lift",
     },
     {
-      name: "Amina Yusuf",
-      role: "TV Presenter, Media City",
-      text: "I trust very few clinics with my face. Covent Clinic has earned that trust completely — expert hands, beautiful results.",
+      name: "Shazia Meraj",
+      role: "Patient",
+      text: "Really Great experience. Dr Saliha is quite professional and knowledgeable.",
       rating: 5,
-      treatment: "Facial Rejuvenation",
+      treatment: "General",
     },
     {
-      name: "Layla Torres",
-      role: "Architect, Jumeirah",
-      text: "From consultation to aftercare, every interaction felt personal. Dermal fillers done perfectly — no one can tell.",
+      name: "Reena K",
+      role: "Patient",
+      text: "She is phenomenal. Listens to what you want and provides the best advice. Absolutely love what she has done with my nose filler. Highly recommend her",
       rating: 5,
       treatment: "Dermal Fillers",
     },
     {
-      name: "Rania Bakr",
-      role: "Entrepreneur, Dubai Hills",
-      text: "The most refined aesthetic clinic across London, New York and Dubai. Covent sets a new standard in the region.",
+      name: "Veronicah Kimani",
+      role: "Patient",
+      text: "Dr.Bhavana and Her Assistant Nurses were Just the best, took care of my Hip dips and I look Amazing, 2months down the Line and The Fillers are very well Settled. I'm Impressed and loving my new look.",
       rating: 5,
-      treatment: "Anti-Aging Protocol",
+      treatment: "Body Contouring",
     },
   ];
 
